@@ -1,4 +1,3 @@
-# ChIA-DropBox
 
 <h5>
 
@@ -14,7 +13,7 @@
 </h5>
 
 
-## ChIA-DropBox-20190606_SRR
+## ChIA-DropBox
 *---- a novel analysis and visualization pipeline for multiplex chromatin interactions*
 
 <font size="1" color="black" face="verdana">*Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Byoungkoo Lee, Meizhen Zheng, Yijun Ruan*</font>
