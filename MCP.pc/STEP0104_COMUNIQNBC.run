@@ -1,0 +1,14 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+
+FDR=$OUTSIDE/$LIB/D01_Barcode/DIVBC
+cd $FDR
+SC=PX_0104_SC_CMBBC_MGUNIQ_NBC.sh
+sh ${FUNDIR}/${SC} $LIB $FDR
+wait
+#echo 'sh '${FUNDIR}'/PX_0104_SC_CMBBC_MGUNIQ_NBC.sh '$LIB' '$FDR'; echo "THIS STEP FIN"'|qsub -l nodes=${QND0104}:ppn=${QPN0104},mem=${QMM0104}gb,walltime=${QWT0104} -d`pwd` -N 0104.$LIB  -o $LOG0104 -e $ERR0104
+
+cd $OUTSIDE

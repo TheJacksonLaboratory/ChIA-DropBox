@@ -1,0 +1,27 @@
+############################
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+
+
+FDR=$LIB/D05_TABLE
+cd $FDR
+#rm -rf $LOG050502 $ERR050502
+MAXF2FDIST=200000
+SC1=${FUNDIR}/PX_050502_mktrack_4basic.sh
+sh $SC1 $FUNDIR $MAXF2FDIST
+
+
+wait
+
+pwd
+ls -l *.BASIC
+
+cd $OUTSIDE
+
+
+
+

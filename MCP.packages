@@ -1,0 +1,8 @@
+module load python/2.7.13
+pip install subprocess --user
+pip install operator --user
+pip install collections --user
+pip install time --user
+pip install pysam --user
+pip install pybedtools --user
+pip install glob --user

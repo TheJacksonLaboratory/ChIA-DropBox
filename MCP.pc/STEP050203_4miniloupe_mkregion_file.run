@@ -1,0 +1,24 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D05_TABLE
+cd $FDR
+
+#README.tian  dm3.ALLISO.E500B.P  dm3.LONGISO.E500B.P  dm6.ALLISO.E500B.P  dm6.LONGISO.E500B.P  hg19.ALLISO.E500B.P  hg19.LONGISO.E500B.P  hg38.ALLISO.E500B.P  hg38.LONGISO.E500B.P  mm10.ALLISO.E500B.P  mm10.LONGISO.E500B.P  mm9.ALLISO.E500B.P  mm9.LONGISO.E500B.P
+for F in *.PlinePfrag
+do
+cat $F|awk -F"\t" -v OFS="\t" '{print $1,$2,$3,$5,$4}' > $F.region
+wait
+intersectBed -a $F.region -b ${FUNDIR}/ALLISO/${GENOME_VERSION}.ALLISO.TSSE500B.PROMOTER -c | awk -v OFS="\t" '{if($6==0) print $1,$2,$3,$4,$5,"E";else print $1,$2,$3,$4,$5,"P"}' > $F.ALLISO.E500B.region.PE
+intersectBed -a $F.region -b ${FUNDIR}/ALLISO/${GENOME_VERSION}.LONGISO.TSSE500B.PROMOTER -c | awk -v OFS="\t" '{if($6==0) print $1,$2,$3,$4,$5,"E";else print $1,$2,$3,$4,$5,"P"}' > $F.LONGISO.E500B.region.PEanno
+wait
+
+done
+
+
+pwd
+ls -l  *.rds
+cd $OUTSIDE

@@ -1,0 +1,19 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D04_SNBC_READ
+cd $FDR
+FRR=R04aI_GEMCLASS
+cd $FRR
+
+cat *.A *.S > ${LIB}_COMBINED_SA
+wait
+pwd
+ls -l  ${LIB}_COMBINED_SA
+
+
+
+cd $OUTSIDE

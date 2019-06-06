@@ -1,0 +1,305 @@
+##=============================
+## STEP0000 ---------------------
+## para for qsub 
+QND0000=1          # qsub nodes
+QPN0000=32         # qsub ppn
+QMM0000=150        # qsub mem
+QTM0000=60:00:00   #qsub walltime
+## para for longranger
+jobmode=local
+localcore=$(echo $QPN0000*$QND0000|bc)
+localmem=$QMM0000
+# LOG file
+LOG0000=LOG0000.${LIB}.log
+##=============================
+## STEP0101 ---------------------
+## para for qsub
+QND0101=1
+QPN0101=1
+QMM0101=150
+QWT0101=6:00:00
+LOG0101=QLOG0101_${LIB}.log  # qsub log
+ERR0101=QERR0101_${LIB}.err  # qsub err
+##=============================
+##STEP0102 ---------------------
+## para for qsub
+QND0102=1
+QPN0102=1
+QMM0102=150
+QWT0102=6:00:00
+LOG0102=QLOG0102_${LIB}.log  # qsub log
+ERR0102=QERR0102_${LIB}.err  # qsub err
+###=============================
+##STEP0103 ---------------------
+### para for qsub
+QND0103=1
+QPN0103=1
+QMM0103=150
+QWT0103=6:00:00
+LOG0103=QLOG0103_${LIB}  # qsub log
+ERR0103=QERR0103_${LIB}  # qsub err
+###=============================
+
+##STEP0104 ---------------------
+#### para for qsub
+QND0104=1
+QPN0104=1
+QMM0104=150
+QWT0104=6:00:00
+LOG0104=QLOG0104_${LIB}.log  # qsub log
+ERR0104=QERR0104_${LIB}.log  # qsub err
+####=============================#
+##STEP0105 ---------------------
+##### para for qsub
+QND0105=1
+QPN0105=1
+QMM0105=150
+QWT0105=6:00:00
+LOG0105=QLOG0105_${LIB}.log  # qsub log
+ERR0105=QERR0105_${LIB}.log  # qsub err
+#####=============================##
+QND0201=1
+QPN0201=1
+QMM0201=150
+QWT0201=6:00:00
+LOG0201=QLOG0201_${LIB}.log  # qsub log
+ERR0201=QERR0201_${LIB}.log  # qsub err
+##STEP0201 ---------------------
+###### para for qsub
+######=============================##
+QND0202=1
+QPN0202=1
+QMM0202=150
+QWT0202=6:00:00
+LOG0202=QLOG0202_${LIB}  # qsub log
+ERR0202=QERR0202_${LIB}  # qsub err
+##STEP0202 ---------------------
+####### para for qsub
+#######=============================##
+QND0401=1
+QPN0401=1
+QMM0401=60
+QWT0401=6:00:00
+LOG0401=QLOG0401_${LIB}  # qsub log
+ERR0401=QERR0401_${LIB}  # qsub err
+########=============================##
+QND0402=1
+QPN0402=1
+QMM0402=60
+QWT0402=6:00:00
+LOG0402=QLOG0402_${LIB}  # qsub log
+ERR0402=QERR0402_${LIB}  # qsub err
+#########=============================##
+QND0403=1
+QPN0403=1
+QMM0403=60
+QWT0403=6:00:00
+LOG0403=QLOG0403_${LIB}  # qsub log
+ERR0403=QERR0403_${LIB}  # qsub err
+#########=============================##
+QND040401=1
+QPN040401=1
+QMM040401=60
+QWT040401=6:00:00
+LOG040401=QLOG040401_${LIB}  # qsub log
+ERR040401=QERR040401_${LIB}  # qsub err
+#########=============================##
+QND040501=1
+QPN040501=1
+QMM040501=60
+QWT040501=6:00:00
+LOG040501=QLOG040501_${LIB}  # qsub log
+ERR040501=QERR040501_${LIB}  # qsub err
+#########=============================##
+QND040503=1
+QPN040503=1
+QMM040503=60
+QWT040503=6:00:00
+LOG040503=QLOG040503_${LIB}  # qsub log
+ERR040503=QERR040503_${LIB}  # qsub err
+#########=============================##
+QND040504=1
+QPN040504=1
+QMM040504=60
+QWT040504=6:00:00
+LOG040504=QLOG040504_${LIB}  # qsub log
+ERR040504=QERR040504_${LIB}  # qsub err
+#########=============================##
+QND040505=1
+QPN040505=1
+QMM040505=60
+QWT040505=6:00:00
+LOG040505=QLOG040505_${LIB}  # qsub log
+ERR040505=QERR040505_${LIB}  # qsub err
+#########=============================##
+QND040506=1
+QPN040506=1
+QMM040506=60
+QWT040506=6:00:00
+LOG040506=QLOG040506_${LIB}  # qsub log
+ERR040506=QERR040506_${LIB}  # qsub err
+#########=============================##
+QND0501=1
+QPN0501=1
+QMM0501=60
+QWT0501=6:00:00
+LOG0501=QLOG0501_${LIB}  # qsub log
+ERR0501=QERR0501_${LIB}  # qsub err
+#########=============================##
+QND050200=1
+QPN050200=1
+QMM050200=60
+QWT050200=6:00:00
+LOG050200=QLOG050200_${LIB}  # qsub log
+ERR050200=QERR050200_${LIB}  # qsub err
+#########=============================##
+QND050201=1
+QPN050201=1
+QMM050201=60
+QWT050201=6:00:00
+LOG050201=QLOG050201_${LIB}  # qsub log
+ERR050201=QERR050201_${LIB}  # qsub err
+#########=============================##
+QND050202=1
+QPN050202=1
+QMM050202=60
+QWT050202=6:00:00
+LOG050202=QLOG050202_${LIB}  # qsub log
+ERR050202=QERR050202_${LIB}  # qsub err
+#########=============================##
+QND050203=1
+QPN050203=1
+QMM050203=60
+QWT050203=6:00:00
+LOG050203=QLOG050203_${LIB}  # qsub log
+ERR050203=QERR050203_${LIB}  # qsub err
+#########=============================##
+QND050204=1
+QPN050204=1
+QMM050204=60
+QWT050204=6:00:00
+LOG050204=QLOG050204_${LIB}  # qsub log
+ERR050204=QERR050204_${LIB}  # qsub err
+#########=============================##
+
+QND050205=1
+QPN050205=1
+QMM050205=60
+QWT050205=6:00:00
+LOG050205=QLOG050205_${LIB}  # qsub log
+ERR050205=QERR050205_${LIB}  # qsub err
+#########=============================##
+
+QND0503=1
+QPN0503=1
+QMM0503=60
+QWT0503=6:00:00
+LOG0503=QLOG0503_${LIB}  # qsub log
+ERR0503=QERR0503_${LIB}  # qsub err
+#########=============================##
+QND1001=1
+QPN1001=1
+QMM1001=120
+QWT1001=40:00:00
+LOG1001=QLOG1001_${LIB}  # qsub log
+ERR1001=QERR1001_${LIB}  # qsub err
+#########=============================##
+#
+QND1101=1
+QPN1101=1
+QMM1101=60
+QWT1101=4:00:00
+LOG1101=QLOG1101_${LIB}  # qsub log
+ERR1101=QERR1101_${LIB}  # qsub err
+#########=============================##
+
+QND2000=1
+QPN2000=1
+QMM2000=60
+QWT2000=4:00:00
+LOG2000=QLOG2000_${LIB}  # qsub log
+ERR2000=QERR2000_${LIB}  # qsub err
+#########=============================##
+QND2010=1
+QPN2010=1
+QMM2010=60
+QWT2010=4:00:00
+LOG2010=QLOG2010_${LIB}  # qsub log
+ERR2010=QERR2010_${LIB}  # qsub err
+#########=============================##
+#
+QND2011=1
+QPN2011=1
+QMM2011=60
+QWT2011=4:00:00
+LOG2011=QLOG2011_${LIB}  # qsub log
+ERR2011=QERR2011_${LIB}  # qsub err
+#########=============================##
+QND2012=1
+QPN2012=1
+QMM2012=60
+QWT2012=4:00:00
+LOG2012=QLOG2012_${LIB}  # qsub log
+ERR2012=QERR2012_${LIB}  # qsub err
+#########=============================##
+#
+QND0504=1
+QPN0504=1
+QMM0504=60
+QWT0504=4:00:00
+LOG0504=QLOG0504_${LIB}  # qsub log
+ERR0504=QERR0504_${LIB}  # qsub err
+#########=============================##
+#
+QND050501=1
+QPN050501=1
+QMM050501=60
+QWT050501=4:00:00
+LOG050501=QLOG050501_${LIB}  # qsub log
+ERR050501=QERR050501_${LIB}  # qsub err
+#########=============================##
+#
+QND050502=1
+QPN050502=1
+QMM050502=60
+QWT050502=4:00:00
+LOG050502=QLOG050502_${LIB}  # qsub log
+ERR050502=QERR050502_${LIB}  # qsub err
+#########=============================##
+#
+QND3001=1
+QPN3001=1
+QMM3001=90
+QWT3001=6:00:00
+LOG3001=QLOG3001_${LIB}  # qsub log
+ERR3001=QERR3001_${LIB}  # qsub err
+#########=============================##
+QND3002=1
+QPN3002=1
+QMM3002=90
+QWT3002=6:00:00
+LOG3002=QLOG3002_${LIB}  # qsub log
+ERR3002=QERR3002_${LIB}  # qsub err
+#########=============================##
+QND3003=1
+QPN3003=1
+QMM3003=90
+QWT3003=6:00:00
+LOG3003=QLOG3003_${LIB}  # qsub log
+ERR3003=QERR3003_${LIB}  # qsub err
+#########=============================##
+QND050601=1
+QPN050601=1
+QMM050601=90
+QWT050601=6:00:00
+LOG050601=QLOG050601_${LIB}  # qsub log
+ERR050601=QERR050601_${LIB}  # qsub err
+#########=============================##
+
+QND050602=1
+QPN050602=1
+QMM050602=90
+QWT050602=6:00:00
+LOG050602=QLOG050602_${LIB}  # qsub log
+ERR050602=QERR050602_${LIB}  # qsub err
+#########=============================##

@@ -1,0 +1,27 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D05_TABLE
+rm -rf $FDR
+
+mkdir $FDR
+
+cd $LIB/D04_SNBC_READ/R04aI_GEMCLASS/
+
+	SC=${FUNDIR}/PX_0501.sh
+        module unload python; module unload bedtools;
+        module load python/2.7.3;module load bedtools/2.26.0;
+	sh $SC $LIB $FUNDIR $OUTSIDE/$FDR ${SPE_TYPE}
+
+wait
+cd $OUTSIDE/$FDR
+pwd
+ls -l *SUBGEM.bsv
+ls -l *.SUBGEM.bsv.gff
+ls -l *.FRAGLINE_OUT.tsv
+
+ls -l *.GEMLINE_OUT.tsv
+cd $OUTSIDE

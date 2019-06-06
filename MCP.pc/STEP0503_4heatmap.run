@@ -1,0 +1,30 @@
+############################
+
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D05_TABLE
+cd $FDR
+FATHER=../D04_SNBC_READ/R04aI_GEMCLASS/
+
+SC1=${FUNDIR}/PX_0503_A2bedpe.py
+SC2=${FUNDIR}/PX_0503_E2bedpe.py
+
+cat $FATHER/*.${SPE_TYPE}.A > ${LIB}.INTERandINTRA.${SPE_TYPE}.A;
+python $SC1 ${LIB}.INTERandINTRA.${SPE_TYPE}.A;
+cat $FATHER/*.${SPE_TYPE}.E > ${LIB}.INTERandINTRA.${SPE_TYPE}.E;
+python $SC2 ${LIB}.INTERandINTRA.${SPE_TYPE}.E;
+cat ${LIB}.INTERandINTRA.${SPE_TYPE}.A.bedpe_fragnum_gemid ${LIB}.INTERandINTRA.${SPE_TYPE}.E.bedpe_fragnum_gemid > ${LIB}.INTERandINTRA.${SPE_TYPE}EA.bedpe_fragnum_gemid.4heatmap ;
+
+wait
+pwd
+ls -l *.4heatmap
+
+cd $OUTSIDE
+
+
+
+

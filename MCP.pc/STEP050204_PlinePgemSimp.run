@@ -1,0 +1,24 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+FDR=$LIB/D05_TABLE
+cd $FDR
+
+for F in *Fragnum_PlinePgem
+do
+
+SC=${FUNDIR}/PX_050204_mk_PlinePgemSimp.py
+python  $SC $F
+done
+wait
+pwd
+ls -l *.PlinePgemSimp
+
+cd $OUTSIDE
+
+
+
+
+

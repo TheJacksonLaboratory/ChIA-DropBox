@@ -1,0 +1,24 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+
+FDR=$LIB/D04_SNBC_READ
+cd $FDR
+
+FRR=R04aI_GEMCLASS
+cd R04a_GEMLINE 
+
+
+mv ${LIB}*.FRAGMENT_GEMLINE.${SPE_TYPE} ../${FRR}/
+
+cd ../${FRR}/
+pwd
+SFX="${SPE_TYPE}"
+echo "$SFX num = "$(ls *.$SFX|wc -l)
+
+cd $OUTSIDE
+
+

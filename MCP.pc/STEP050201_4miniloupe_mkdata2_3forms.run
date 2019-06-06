@@ -1,0 +1,28 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D05_TABLE
+cd $FDR
+
+
+
+for F in *.BE2_FRAGNUM
+do
+SC=${FUNDIR}/PX_050201_4miniloupe_mkdata2_3forms.py
+python $SC $F
+
+done
+
+wait
+pwd
+ls -l *.Fragnum_PlinePgem
+ls -l *.F2FPAIR_PlinePpair
+ls -l *.bedpe_PlinePpair
+
+
+cd $OUTSIDE
+
+

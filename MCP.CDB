@@ -1,0 +1,117 @@
+CDB0(){
+        sh  ${FUNDIR}/STEP0000_MAPPING.run
+        };
+CDB1(){
+        sh  ${FUNDIR}/STEP0001_MKDOO.run
+        };
+CDB2(){
+        sh  ${FUNDIR}/STEP0101_GETBC.run
+        };
+CDB3(){
+        sh  ${FUNDIR}/STEP0102_DIVBC.run
+        };
+CDB4(){
+        sh  ${FUNDIR}/STEP0103_UNIQBC.run.p
+        };
+CDB5(){
+        sh  ${FUNDIR}/STEP0104_COMUNIQNBC.run
+        };
+CDB6(){
+        sh  ${FUNDIR}/STEP0105_SNBC.run
+        };
+CDB7(){
+        sh  ${FUNDIR}/STEP0201_SNBCBAM.run
+        };
+CDB8(){
+        sh  ${FUNDIR}/STEP0202_INDEXBAM.run.p
+        };
+CDB9(){
+        sh  ${FUNDIR}/STEP0401_F2304.run.p
+        };
+CDB10(){
+        sh  ${FUNDIR}/STEP0402_bam2bed.run.p
+        };
+CDB11(){
+        sh  ${FUNDIR}/STEP0403_SH_BCLINE.run.p
+        };
+CDB12(){
+        sh  ${FUNDIR}/STEP040401_merge_to_fregment.run.p
+        };
+CDB13(){
+        sh  ${FUNDIR}/STEP040402_output_fragment.run
+        };
+CDB14(){
+        sh  ${FUNDIR}/STEP040501_CLASIFY.run.p
+        };
+CDB15(){
+        sh  ${FUNDIR}/STEP040502_further_extension.run
+        };
+CDB16(){
+        sh  ${FUNDIR}/STEP040503_CLASS_GEM2EAS.run.p
+        };
+CDB17(){
+        sh  ${FUNDIR}/STEP040504_CLASS_E2AS.run.p
+        };
+CDB18(){
+        sh  ${FUNDIR}/STEP040505_COMBINE_SA.run
+        };
+CDB19(){
+        sh  ${FUNDIR}/STEP040506_SUBGEM.run
+        };
+CDB20(){
+        sh  ${FUNDIR}/STEP0501_RESULT.run
+        };
+CDB21(){
+        sh  ${FUNDIR}/STEP050200_data_for_miniloupe_FRAGNUM_BE2.run
+        };
+CDB22(){
+        sh  ${FUNDIR}/STEP050201_4miniloupe_mkdata2_3forms.run
+        };
+CDB23(){
+        sh  ${FUNDIR}/STEP050202_4miniloupe_PlinePfrag.run
+        };
+CDB24(){
+        sh  ${FUNDIR}/STEP050203_4miniloupe_mkregion_file.run
+        };
+CDB25(){
+        sh  ${FUNDIR}/STEP050204_PlinePgemSimp.run
+        };
+CDB26(){
+        sh  ${FUNDIR}/STEP050205_PfragPlineWgem.run
+        };
+CDB27(){
+        sh  ${FUNDIR}/STEP0503_4heatmap.run
+        };
+CDB28(){
+        sh  ${FUNDIR}/STEP0504_bedgraph.run
+        };
+CDB29(){
+        sh  ${FUNDIR}/STEP050501_div_gff.run
+        };
+CDB30(){
+        sh  ${FUNDIR}/STEP050502_mktrack_4basic.run
+        };
+CDB31(){
+        sh  ${FUNDIR}/STEP050601_prepare_for_.hic.run
+        };
+CDB32(){
+        sh  ${FUNDIR}/STEP050602_mk_.hic.run
+        };
+CDB33(){
+        sh  ${FUNDIR}/STEP1001_sta.run
+        };
+CDB34(){
+        sh  ${FUNDIR}/STEP1101_STA2.run
+        };
+CDB35(){
+        sh  ${FUNDIR}/STEP1201_REPORT.run
+        };
+CDB36(){
+        sh  ${FUNDIR}/STEP2000_prepare_data_for_plot.run
+	};
+CDB37(){
+        sh  ${FUNDIR}/STEP2001_plot.run
+	};
+CDB38(){
+        sh  ${FUNDIR}/STEP2002_combine_image.run
+        };

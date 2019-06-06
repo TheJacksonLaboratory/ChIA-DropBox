@@ -1,0 +1,84 @@
+#! /bin/bash
+#PBS -l nodes=1:ppn=16,mem=150gb,walltime=25:00:00
+#PBS -N  SHG0051H
+
+cd $PBS_O_WORKDIR
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+rm -rf ERR_DIR
+TIME=`date +%Y%m%d-%H%M%S`
+mkdir ERR_DIR
+LOG=$LIB.pc.run.$TIME.log
+echo $OUTSIDE > $LOG
+date >> $LOG
+echo "###############" >> $LOG
+		#STEP0001_MKDOO.run \
+for SC in       STEP_START.run  \
+		STEP0000_MAPPING.run  \
+		STEP0001_MKDOO.run \
+		STEP0101_GETBC.run \
+		STEP0102_DIVBC.run \
+		STEP0103_UNIQBC.run.p \
+		STEP0104_COMUNIQNBC.run \
+		STEP0105_SNBC.run \
+		STEP0201_SNBCBAM.run \
+		STEP0202_INDEXBAM.run.p \
+		STEP0403_SH_BCLINE.run.p  \
+		STEP0401_F2304.run.p \
+		STEP0402_bam2bed.run.p	\
+		STEP0403_SH_BCLINE.run.p \
+		STEP040401_merge_to_fregment.run.p \
+		STEP040402_output_fragment.run \
+		STEP040501_CLASIFY.run.p \
+		STEP040502_further_extension.run \
+		STEP040503_CLASS_GEM2EAS.run.p \
+		STEP040504_CLASS_E2AS.run.p \
+		STEP040505_COMBINE_SA.run \
+		STEP040506_SUBGEM.run \
+		STEP0501_RESULT.run \
+		STEP050200_data_for_miniloupe_FRAGNUM_BE2.run \
+		STEP050201_4miniloupe_mkdata2_3forms.run \
+		STEP050202_4miniloupe_PlinePfrag.run \
+		STEP050203_4miniloupe_mkregion_file.run \
+		STEP050204_PlinePgemSimp.run \
+		STEP050205_PfragPlineWgem.run \
+		STEP0503_4heatmap.run \
+		STEP0504_bedgraph.run \
+		STEP050501_div_gff.run \
+		STEP050502_mktrack_4basic.run \
+		STEP050601_prepare_for_.hic.run \
+		STEP050602_mk_.hic.run \
+		STEP1001_sta.run \
+		STEP1101_STA2.run \
+		STEP1201_REPORT.run \
+		STEP2000_prepare_data_for_plot.sh  \
+ 		STEP2001_plot.sh \
+		STEP2002_combine_image.run \
+		STEP_FIN.run
+
+do
+	echo "###################" >> $LOG
+	echo $SC >> $LOG
+	date >> $LOG
+	ERR=ERR_DIR/$SC.log
+	sh MCP.pc/$SC >> $LOG 2> $ERR
+	wait
+	ROWNUM=$(cat $ERR|wc -l)
+	if [ $ROWNUM -eq 0 ]
+		then
+			echo $SC" FINISHED" >> $LOG
+		else
+			echo $SC" FINISHED WITH ERROR" >> $LOG
+			echo "---------------" >> $LOG
+			cat $ERR >> $LOG
+			echo "---------------" >> $LOG
+	fi
+	date >> $LOG
+done
+echo "###############" >> $LOG
+echo "###############" >> $LOG
+echo $OUTSIDE >> $LOG
+date >> $LOG
+

@@ -1,0 +1,21 @@
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR="D10_STA"
+
+cd $LIB
+rm -rf $FDR
+mkdir $FDR
+cd $FDR
+
+SC=${FUNDIR}/PX_1001_STA.sh
+sh $SC $LIB
+wait
+pwd
+ls -l S0* K0*
+
+cd $OUTSIDE
+

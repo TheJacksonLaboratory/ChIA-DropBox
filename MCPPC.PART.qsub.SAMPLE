@@ -1,0 +1,45 @@
+#PBS -N  LIBNAME
+cd $PBS_O_WORKDIR
+FROM=0
+TO=38
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.CDB
+rm -rf ERR_DIR
+TIME=`date +%Y%m%d-%H%M%S`
+mkdir ERR_DIR
+LOG=$LIB.${FROM}-${TO}.$TIME.log
+echo $OUTSIDE > $LOG
+date >> $LOG
+echo "###############" >> $LOG
+for i in `seq $FROM $TO`
+do
+	SC=CDB${i}
+	echo $SC >> $LOG
+	echo "###################" >> $LOG
+	echo $SC >> $LOG
+	date >> $LOG
+	ERR=ERR_DIR/$SC.log
+
+	CDB${i} >> $LOG 2> $ERR
+	wait
+	ROWNUM=$(cat $ERR|wc -l)
+	if [ $ROWNUM -eq 0 ]
+		then
+			echo $SC" FINISHED" >> $LOG
+		else
+			echo $SC" FINISHED WITH ERROR" >> $LOG
+			echo "---------------" >> $LOG
+			cat $ERR >> $LOG
+			echo "---------------" >> $LOG
+	fi
+	date >> $LOG
+	wait
+done
+echo "###############" >> $LOG
+echo "###############" >> $LOG
+echo $OUTSIDE >> $LOG
+date >> $LOG
+

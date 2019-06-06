@@ -1,0 +1,44 @@
+#! /bin/bash
+#PBS -l nodes=1:ppn=16,mem=150gb,walltime=10:00:00
+#PBS -N  SHG0041HPDCD
+
+cd $PBS_O_WORKDIR
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+rm -rf ERR_DIR
+TIME=`date +%Y%m%d-%H%M%S`
+mkdir ERR_DIR
+LOG=$LIB.pc.run.$TIME.log
+echo $OUTSIDE > $LOG
+date >> $LOG
+echo "###############" >> $LOG
+for SC in 		STEP2001_plot.sh \
+		STEP2002_combine_image.run \
+		STEP_FIN.run
+
+do
+	echo "###################" >> $LOG
+	echo $SC >> $LOG
+	date >> $LOG
+	ERR=ERR_DIR/$SC.log
+	sh MCP.pc/$SC >> $LOG 2> $ERR
+	wait
+	ROWNUM=$(cat $ERR|wc -l)
+	if [ $ROWNUM -eq 0 ]
+		then
+			echo $SC" FINISHED" >> $LOG
+		else
+			echo $SC" FINISHED WITH ERROR" >> $LOG
+			echo "---------------" >> $LOG
+			cat $ERR >> $LOG
+			echo "---------------" >> $LOG
+	fi
+	date >> $LOG
+done
+echo "###############" >> $LOG
+echo "###############" >> $LOG
+echo $OUTSIDE >> $LOG
+date >> $LOG
+

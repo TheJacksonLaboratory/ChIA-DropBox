@@ -1,0 +1,15 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+FDR="D20_PLOT"
+
+cd $LIB
+
+cd $FDR
+montage PLOT.2001* PLOT.2002* PLOT.2004* PLOT.2011* PLOT.2013* PLOT.2021* PLOT.2012* PLOT.2022* PLOT.2023* PLOT.2031* PLOT.2032* PLOT.2033* -tile 3x4 -geometry +0+0 ${LIB}.QCPLOT.AIN1.png
+#montage PLOT.*.png -tile 3x4 -geometry +0+0 ${LIB}.QCPLOT.AIN1.png
+wait
+pwd
+ls ${LIB}.QCPLOT.AIN1.png
+cd $OUTSIDE

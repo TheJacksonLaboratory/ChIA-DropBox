@@ -1,0 +1,20 @@
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D05_TABLE
+cd $FDR
+
+SC1=${FUNDIR}/PX_050601_prepare_for_.hic.sh
+sh $SC1 $LIB
+wait
+pwd
+ls -l *MID_LOOP
+
+cd $OUTSIDE
+
+
+
+

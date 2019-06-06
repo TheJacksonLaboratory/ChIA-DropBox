@@ -1,0 +1,6 @@
+if (!require("ggplot2")) install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+if (!require("gridExtra")) install.packages("gridExtra", repos = "http://cran.us.r-project.org")
+if (!require("dplyr")) install.packages("dplyr", repos = "http://cran.us.r-project.org")
+if (!require("sitools")) install.packages("sitools", repos = "http://cran.us.r-project.org")
+if (!require("scales")) install.packages("scales", repos = "http://cran.us.r-project.org")
+if (!require("gridExtra")) install.packages("gridExtra", repos = "http://cran.us.r-project.org")

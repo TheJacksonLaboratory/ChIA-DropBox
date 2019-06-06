@@ -1,0 +1,10 @@
+function jobmax
+{
+    typeset -i MAXJOBS=$1
+    sleep .2
+    while (( ($(pgrep -P $$ | wc -l) - 1) >= $MAXJOBS ))
+    do
+        sleep .2
+    done
+}
+

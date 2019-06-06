@@ -1,0 +1,37 @@
+import sys,os
+
+IN=sys.argv[1]
+#IN="SHG0008_possorted_bam.bam_with_barcode.bam.F2304.bam.sN.bam.bed.R1.rmHETUM"
+FIN=open(IN,"r")
+FOUT=open(IN+".BCline","w")
+LAST=""
+newline=""
+while True:
+	line=FIN.readline()
+	if not line:
+		FOUT.write(newline+"\n")
+		break
+	word=line.rstrip("\n")
+	BC=word.split("\t")[3].split(":")[0]
+	if LAST=="":
+		LAST=BC
+		newline=word
+	elif LAST==BC:
+		newline=newline+";"+word
+	elif LAST!=BC:
+		FOUT.write(newline+"\n")
+		newline=word
+		LAST=BC		
+
+
+
+
+"""
+$head SHG0007_possorted_bam.bam_with_barcode.bam.F2304.bam.sN.bam.bed.R1
+chr2	48277985	48278086	SHG0007-BX1000000000-AAACACCAGAAACCCG:M03204:199:000000000-B5HRF:1:1102:14842:6812/1	60	-
+dchr3R	21322589	21322644	SHG0007-BX1000000000-AAACACCAGAAACCCG:M03204:199:000000000-B5HRF:1:1106:15591:6869/1	60	+
+chr2	48278034	48278139	SHG0007-BX1000000000-AAACACCAGAAACCCG:M03204:199:000000000-B5HRF:1:1109:21875:8393/1	60	+
+chr2	48277904	48278002	SHG0007-BX1000000000-AAACACCAGAAACCCG:M03204:199:000000000-B5HRF:1:1113:15719:22669/1	60	-
+chr2	48277894	48277990	SHG0007-BX1000000000-AAACACCAGAAACCCG:M03204:199:000000000-B5HRF:1:1114:17462:14190/1	60	-
+
+"""

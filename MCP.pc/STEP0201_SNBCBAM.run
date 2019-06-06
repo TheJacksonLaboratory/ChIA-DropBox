@@ -1,0 +1,22 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D02_SNBC_BAM
+rm -rf $FDR
+mkdir $FDR
+
+cd $FDR
+rm -rf $LOG0201 $ERR0201
+
+SC=${FUNDIR}/PX_0201_SC_SBAM_by_SNBC.py
+python $SC $OUTSIDE/$LIB/D01_Barcode/$LIB.CMBBC_MGUNIQ_NBC.SNBC $OUTSIDE/$LIB/D00_outs/phased_possorted_bam.bam $LIB
+
+wait
+pwd
+#ls phased_possorted_bam.bam
+echo "SNBC.bam = "$(ls *.SNBC.bam|wc -l )
+cd $OUTSIDE
+
+

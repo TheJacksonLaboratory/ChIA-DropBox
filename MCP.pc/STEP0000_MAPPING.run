@@ -1,0 +1,10 @@
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+
+longranger wgs  $LIB $MRO  --jobmode=local  --localcores=32 --localmem=150
+
+

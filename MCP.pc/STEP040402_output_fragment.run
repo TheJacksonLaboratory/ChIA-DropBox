@@ -1,0 +1,25 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+
+FDR=$LIB/D04_SNBC_READ
+cd $FDR
+
+FDRa="R04a_GEMLINE"
+FDRb="R04b_FRAGLINE"
+FDRc="R04c_READLINE"
+
+
+cd R02_BCLINE/
+ mv *GEMLINE ../$FDRa
+ mv *FRAGLINE ../$FDRb
+ mv *READLINE ../$FDRc
+
+wait
+
+cd $OUTSIDE
+
+

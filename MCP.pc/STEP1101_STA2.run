@@ -1,0 +1,34 @@
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR="D11_STA_GEM"
+
+cd $LIB
+
+rm -rf $FDR
+mkdir $FDR
+cd $FDR
+pwd
+
+
+SC=${FUNDIR}/PX_1101_STA2.sh
+#sh $SC $LIB $OUTSIDE  $SPE_TYPE
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}|wc -l > G00_ALL_GEM.sta
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.S|wc -l > G01_singl.${SPE_TYPE}rag.sta
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.E ../D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.A |wc -l> G02_mult.${SPE_TYPE}rags.sta
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.A |wc -l> G03_intra.sta
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.E|wc -l > G04_inter.sta
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.E.A |wc -l> G05_inter_intra.sta
+cat ${OUTSIDE}/${LIB}/D04_SNBC_READ/R04aI_GEMCLASS/*_GEMLINE.${SPE_TYPE}.E.S|wc -l > G06_inter_single.sta
+cat ${OUTSIDE}/${LIB}/D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv|grep -v "GEM_ID" |wc -l > G07_Total_SA.sta
+python ${FUNDIR}/PX_1101_FRAG_DIST.py ${OUTSIDE}/${LIB}/D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv
+
+
+
+wait
+ls -l G0*
+cd $OUTSIDE
+

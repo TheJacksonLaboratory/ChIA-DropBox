@@ -1,0 +1,21 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D01_Barcode/DIVBC
+cd $FDR
+SC=${FUNDIR}/PX_0105_SC_SNBC.sh
+python $SC $LIB.CMBBC_MGUNIQ_NBC
+wait
+cp ${LIB}.CMBBC_MGUNIQ_NBC.SNBC ../
+#echo 'module load python; python '${FUNDIR}'/PX_0105_SC_SNBC.sh '$LIB'.CMBBC_MGUNIQ_NBC; cp '${LIB}'.CMBBC_MGUNIQ_NBC.SNBC ..; echo "THIS STEP FIN"'|qsub -l nodes=${QND0105}:ppn=${QPN0105},mem=${QMM0105}gb,walltime=${QWT0105} -d`pwd` -N 0105.$LIB  -o $LOG0105 -e $ERR0105
+
+
+
+
+cd $OUTSIDE
+
+
+
+

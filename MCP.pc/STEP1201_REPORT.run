@@ -1,0 +1,39 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR="D12_REPORT"
+
+cd $LIB
+
+rm -rf $FDR
+mkdir $FDR
+cd $FDR
+
+rm -rf ${LIB}_sta.txt
+for F in S00 S01 S02 S03 S04 S05 S06 S07 S08 K01 K02 K03
+do
+cat ../D10_STA/${F}*.sta >> ${LIB}_sta.txt
+done
+
+for F in G00 G01 G02 G03 G04 G05 G06 G07 G08
+do
+
+cat ../D11_STA_GEM/${F}*.sta >> ${LIB}_sta.txt
+done
+
+paste ${LIB}_sta.txt ${FUNDIR}/PX_1201_REPORT.rowname > ${LIB}_sta.csv
+
+chmod 755 ${LIB}_sta.csv
+
+
+#GEM_ID	SPECIES	TRACC_BACK	GEM_REGION	GEM_COV	GEM_FRAGNUM	GEM_READNUM	FRAG_LEN_LIST	READ_COUNT_LIST	F2F_DISTANCE_LIST
+cat ${OUTSIDE}/${LIB}/D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv|cut -f6|grep -v "GEM_FRAGNUM"|sort| uniq -c |rev|awk '{print $2"\t"$1}'|rev > ${LIB}.GEMcountPerFN_distribution.txt
+
+wait
+pwd
+ls -l ${LIB}*
+cat ${LIB}_sta.csv
+cd $OUTSIDE
+

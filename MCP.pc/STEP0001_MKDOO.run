@@ -1,0 +1,17 @@
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+cd ${OUTSIDE}/$LIB
+
+mv outs/ D00_outs/
+
+mkdir D00_PARAMETER
+
+find ./ -maxdepth 1 -type f -print0 | xargs -0 mv -t D00_PARAMETER
+mv PHASER_SVCALLER_CS D00_PARAMETER
+
+cd $OUTSIDE
+

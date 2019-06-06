@@ -1,0 +1,18 @@
+############################
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=$LIB/D05_TABLE
+cd $FDR
+
+F=${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv
+
+cat $F|awk '{if($6>1)print}' > $F.BE2_FRAGNUM
+
+pwd 
+ls -l $F.BE2_FRAGNUM
+
+
+cd $OUTSIDE

@@ -1,0 +1,23 @@
+
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+cd ${OUTSIDE}/$LIB
+
+
+FDR=$OUTSIDE/${LIB}/D01_Barcode
+rm -rf $FDR
+mkdir $FDR
+cd $FDR
+
+
+F=${OUTSIDE}/${LIB}/D00_outs/phased_possorted_bam.bam
+SC=${FUNDIR}/PX_0101_SC_get_BC_from_bam.py
+
+python ${SC} $F $LIB 
+
+##echo 'module load '';python '${SC}' '$F '  ' $LIB ';echo "THIS STEP FIN" ' |qsub -l nodes=${QND0101}:ppn=${QPN0101},mem=${QMM0101}gb,walltime=${QTM0101} -d`pwd` -N 0101.$LIB -o $LOG0101 -e $ERR0101
+cd $OUTSIDE
+

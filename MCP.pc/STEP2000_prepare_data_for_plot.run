@@ -1,0 +1,44 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+FDR="D20_PLOT"
+
+cd $LIB
+
+rm -rf $FDR
+mkdir $FDR
+cd $FDR
+
+
+
+cat ../D04_SNBC_READ/R02_BCLINE/*.q30|awk -v name=$LIB -v OFS="\t" '{print $1,$2,$3,name"-R1-q30",$3-$2}' > P01_CMB.${LIB}.R1.q30.bed
+cat ../D04_SNBC_READ/R02_BCLINE/*.lenBE50 |awk -v name=$LIB -v OFS="\t" '{print $1,$2,$3,name"-R1-q30-lenBE50",$3-$2}'> P02_CMB.${LIB}.R1.q30.lenBE50.bed
+cat ../D04_SNBC_READ/R02_BCLINE/*.CHR_CLEAN  |awk -v name=$LIB -v OFS="\t" '{print $1,$2,$3,name"-R1-q30-lenBE50-MAJOR_CHROM",$3-$2}' > P03_CMB.${LIB}.R1.q30.lenBE50.MAJOR_CHROM.bed
+cat ../D04_SNBC_READ/R02_BCLINE/*.5e0_3e500.EXT  |awk -v name=$LIB -v OFS="\t" '{print $1,$2,$3,name"-R1-q30-lenBE50-MAJOR_CHROM-3E500",$3-$2}' > P04_CMB.${LIB}.R1.q30.lenBE50.MAJOR_CHROM.3E500.bed
+
+ln -s ../D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.FRAGLINE_OUT.tsv              P10.${LIB}_COMBINED_SA.SUBGEM.bsv.gff.FRAGLINE_OUT.tsv
+ln -s ../D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv               P11.${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv
+ln -s ../D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv.BE2_FRAGNUM   P13.${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv.BE2_FRAGNUM
+
+
+ln -s  ../D05_TABLE/${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv.BE2_FRAGNUM.bedpe_PlinePpair     P21.${LIB}_COMBINED_SA.SUBGEM.bsv.gff.GEMLINE_OUT.tsv.BE2_FRAGNUM.bedpe_PlinePpair
+wait
+pwd
+ls -l P[0-9]*
+
+
+#module load R/3.3.1
+#Rscript ${FUNDIR}/PX_2000_RPLOT.r $LIB 
+
+
+
+cd $OUTSIDE
+
+
+
+
+
+
+
+

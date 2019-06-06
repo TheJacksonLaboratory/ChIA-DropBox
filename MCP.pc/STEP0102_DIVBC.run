@@ -1,0 +1,21 @@
+OUTSIDE=`pwd`
+source ${OUTSIDE}/MCP.conf
+source ${OUTSIDE}/MCP.module
+source ${OUTSIDE}/MCP.tools
+
+FDR=D01_Barcode
+cd $LIB/$FDR
+rm -rf DIVBC
+mkdir DIVBC
+F=${LIB}.BC
+
+split -d -a 4 -l 100000 $F $F.
+wait
+mv *.BC.[0-9][0-9][0-9][0-9] DIVBC/ 
+wait
+
+
+#echo 'module load python/2.7.9;split -d -a 4 -l 100000 '$F' '$F'.; mv *.BC.[0-9][0-9][0-9][0-9] DIVBC/;echo "THIS STEP FIN" '$F|qsub -l nodes=${QND0102}:ppn=${QPN0102},mem=${QMM0102}gb,walltime=${QTM0102} -d`pwd` -N 0102.$LIB -o $LOG0102 -e $ERR0102
+cd $OUTSIDE
+
+
