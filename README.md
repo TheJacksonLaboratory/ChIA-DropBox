@@ -8,7 +8,7 @@
 - For the test purpose, 
 - users should download the code directly from the browser after logging in using provided ID and password. 
 - "git clone or wget" will work when we open ChIA-DropBox to public." 
-- We add script adapt GEO compressed SRR fastq file.
+- We have added scripts for GEO SRRxxx fastq file.
 ```
 
 </h5>
