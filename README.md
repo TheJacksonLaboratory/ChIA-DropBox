@@ -1,4 +1,5 @@
-# ChIA-DropBox-20190606_SRR
+# ChIA-DropBox
+
 <h5>
 
 ```diff
@@ -7,13 +8,13 @@
 - For the test purpose, 
 - users should download the code directly from the browser after logging in using provided ID and password. 
 - "git clone or wget" will work when we open ChIA-DropBox to public." 
-
+1 We add script adapt GEO compressed SRR fastq file.
 ```
 
 </h5>
 
 
-## ChIA-DropBox 
+## ChIA-DropBox-20190606_SRR
 *---- a novel analysis and visualization pipeline for multiplex chromatin interactions*
 
 <font size="1" color="black" face="verdana">*Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Byoungkoo Lee, Meizhen Zheng, Yijun Ruan*</font>
