@@ -38,7 +38,7 @@ Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>
 Download 10X Genomeics <b><i>[longranger pipeline](https://support.10xgenomics.com/genome-exome/software/downloads/latest)</i></b>, and then install it according to its [Instruction](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/installation). We have tested longranger/2.1.5 (previous version) and longranger/2.2.2 (latest version), they are working.
 
 ### 1.2 Prepare reference genome 
-Before running ChIA-dropbox pipeline, we need to prepare genome reference according to [10X Genomics guide](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/advanced/references). Current ChIA-DropBox can be used for these version genomes: **dm3**, **dm6**, **hg19**, **hg38**, **mm9**, **mm10**, as well as our home-brew **dm3hg19** and **hg19dm3** inter-species genome reference.
+Before running ChIA-dropbox pipeline, we need to prepare genome reference according to [10X Genomics guide](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/advanced/references). Current ChIA-DropBox can be used for these version genomes: **dm3**, **dm6**, **hg19**, **hg38**, **mm9**, **mm10**.
 
 ```shell
 mkdir reference_genome/
