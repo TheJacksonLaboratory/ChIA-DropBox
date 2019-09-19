@@ -454,3 +454,6 @@ Here export ChIA-dropbox QC plots:
 /path-to-data-processing/SHG0055H/SHG0055H/D20_PLOT/SHG0055H.QCPLOT.AIN1.png
 
 <img src="SAMPLE.QCPLOT.AIN1.png" width="800"/> 
+
+##### (5) Demo 
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/iY8zMVAjIr0)
