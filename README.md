@@ -455,5 +455,5 @@ Here export ChIA-dropbox QC plots:
 
 <img src="SAMPLE.QCPLOT.AIN1.png" width="800"/> 
 
-##### (5) Demo 
+##### (5) ChIA-DropBox Demo Video 
 [![Watch the video](https://github.com/TheJacksonLaboratory/ChIA-DropBox/blob/master/demo-pic.001.jpeg)](https://youtu.be/iY8zMVAjIr0)
