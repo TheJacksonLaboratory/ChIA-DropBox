@@ -35,7 +35,7 @@ Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>
 ## 1 Prepare materials for longranger
 
 ### 1.1 Install longranger pipeline
-Download 10X Genomeics <b><i>[longranger pipeline](https://support.10xgenomics.com/genome-exome/software/downloads/latest)</i></b>, and then install it according to its [Instruction](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/installation). We have tested longranger v1.x , which could be download from: https://support.10xgenomics.com/genome-exome/software/downloads/1.x/
+Download 10X Genomeics <b><i>[longranger pipeline](https://support.10xgenomics.com/genome-exome/software/downloads/latest)</i></b>, and then install it according to its [Instruction](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/installation). We have tested **longranger v1.x**, which could be download from: https://support.10xgenomics.com/genome-exome/software/downloads/1.x/
 
 
 ### 1.2 Prepare reference genome 
