@@ -1,7 +1,7 @@
 ## ChIA-DropBox
 *---- a novel analysis and visualization pipeline for multiplex chromatin interactions*
 
-Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>, a novel experimental method for detecting multiplex chromatin interactions with single-molecule precision via droplet-based and barcode-linked sequencing. **ChIA-DropBox**<span style="color:blue"><sup>2</sup></span>  a novel toolkit for analyzing and visualizing multiplex chromatin interactions, which includes:  a **ChIA-DropBox data processing pipeline**<span style="color:blue"><sup>3</sup></span> and a visualizing tool **ChIA-View**<span style="color:blue"><sup>4</sup></span>. Here we also supply tools for importing **SPRITE**<span style="color:blue"><sup>5</sup></span> and **GAM**<span style="color:blue"><sup>6</sup></span> data into ChIA-DropBox pipeline to see library quality and view data using ChIA-View (in MCP.transformate_SPRITE_to_ChIA-DropBox and MCP.transformate_GAM_to_ChIA-DropBox directories).
+Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>, a novel experimental method for detecting multiplex chromatin interactions with single-molecule precision via droplet-based and barcode-linked sequencing. **ChIA-DropBox**<span style="color:blue"><sup>2</sup></span>  a novel toolkit for analyzing and visualizing multiplex chromatin interactions, which includes:  a **ChIA-DropBox data processing pipeline**<span style="color:blue"><sup>3</sup></span> and a visualizing tool **ChIA-View**<span style="color:blue"><sup>4</sup></span>. Here we also supply tools for importing **SPRITE**<span style="color:blue"><sup>5</sup></span> and **GAM**<span style="color:blue"><sup>6</sup></span> data into ChIA-DropBox pipeline to see library quality and view data using ChIA-View (in MCP.transformate_SPRITE_to_ChIA-DropBox and MCP.transformate_GAM_to_ChIA-DropBox directories). We also give a interface to transmit ChIA-Drop pairewise contact file to call loop clustering in **ChIA-PIPE pipeline **<span style="color:blue"><sup>7</sup></span> .
 
 <span style="color:blue"><sup>1</sup></span>  [Meizhen Zheng, Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Rahul Maurya, Byoungkoo Lee, Emaly Piecuch et al. "Multiplex chromatin interactions with single-molecule precision."  Nature volume 566, pages558–562(2019).](https://www.nature.com/articles/s41586-019-0949-1) 
 
@@ -15,6 +15,7 @@ Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>
 
 <span style="color:blue"><sup>6</sup></span>  *Beagrie R A, Scialdone A, Schueler M, et al. Complex multi-enhancer contacts captured by genome architecture mapping[J]. Nature, 2017, 543(7646): 519.*
 
+<span style="color:blue"><sup>7</sup></span>  *Capurso D, Wang J, Tian S Z, et al. ChIA-PIPE: A fully automated pipeline for ChIA-PET data analysis and visualization[J]. bioRxiv, 2018: 506683.*
 
 <font size="3" color="blue" face="verdana"> This pipeline was developed and executed in Centos 6.5 of HPC (high performance computing). </font>
 
