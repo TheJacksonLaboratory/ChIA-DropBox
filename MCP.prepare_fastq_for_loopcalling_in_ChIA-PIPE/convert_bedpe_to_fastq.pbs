@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Set parameters for the cluster
+#PBS -l nodes=1:ppn=10
+#PBS -l walltime=40:00:00
+#PBS -l mem=20GB
+#PBS -l vmem=20GB
+#PBS -j oe
+
+# The help message
+function usage
+{
+    echo -e "qsub -F \"--conf ${CONF}\" convert_bedpe_to_fastq.pbs
+    "
+}
+
+## Parse arguments from the command line
+while [ "$1" != "" ]; do
+    case $1 in
+        -c | --conf )           shift
+                                conf=$1
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
+
+
+cd ${PBS_O_WORKDIR}
+source ${conf}
+
+python convert_bedpe_to_fastq.py \
+    --ref ${ref} --bedpe ${bedpe} --prefix ${prefix} --out_dir ${out_dir}
