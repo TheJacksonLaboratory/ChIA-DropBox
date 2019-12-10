@@ -1,30 +1,17 @@
-
-<h5>
-
-```diff
-- "Currently, ChIA-DropBox is under review, 
-- and will be opened to public after we published our paper.
-- For the test purpose, 
-- users should download the code directly from the browser after logging in using provided ID and password. 
-- "git clone or wget" will work when we open ChIA-DropBox to public." 
-- We have added scripts for GEO SRRxxx fastq file.
-```
-
-</h5>
-
-
 ## ChIA-DropBox
 *---- a novel analysis and visualization pipeline for multiplex chromatin interactions*
 
 <font size="1" color="black" face="verdana">*Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Byoungkoo Lee, Meizhen Zheng, Yijun Ruan*</font>
 
-Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>, a novel experimental method for detecting multiplex chromatin interactions with single-molecule precision via droplet-based and barcode-linked sequencing. **ChIA-DropBox**  a novel toolkit for analyzing and visualizing multiplex chromatin interactions, which includes:  a **ChIA-DropBox data processing pipeline**<span style="color:blue"><sup>2</sup></span> and a visualizing tool **ChIA-View**<span style="color:blue"><sup>3</sup></span>.
+Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>, a novel experimental method for detecting multiplex chromatin interactions with single-molecule precision via droplet-based and barcode-linked sequencing. **ChIA-DropBox**<span style="color:blue"><sup>2</sup></span>  a novel toolkit for analyzing and visualizing multiplex chromatin interactions, which includes:  a **ChIA-DropBox data processing pipeline**<span style="color:blue"><sup>3</sup></span> and a visualizing tool **ChIA-View**<span style="color:blue"><sup>4</sup></span>.
 
-<span style="color:blue"><sup>1</sup></span>  [Meizhen Zheng, Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Rahul Maurya, Byoungkoo Lee, Emaly Piecuch et al. "Multiplex chromatin interactions with single-molecule precision."  Nature 566, 558 (2019).](https://www.nature.com/articles/s41586-019-0949-1) & [GSE109355](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE109355) 
+<span style="color:blue"><sup>1</sup></span>  [Meizhen Zheng, Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Rahul Maurya, Byoungkoo Lee, Emaly Piecuch et al. "Multiplex chromatin interactions with single-molecule precision."  bioRxiv (2019): 613034.](doi: https://doi.org/10.1101/613034) 
 
-<span style="color:blue"><sup>2</sup></span> *https://github.com/TheJacksonLaboratory/ChIA-DropBox.git*
+<span style="color:blue"><sup>2</sup></span>  [Simon Zhongyuan Tian, Daniel Capurso, Minji Kim, Byoungkoo Lee, Meizhen Zheng, Yijun Ruan. "ChIA-DropBox: a novel analysis and visualization pipeline for multiplex chromatin interactions"  Nature 566, 558 (2019).](https://www.biorxiv.org/content/10.1101/613034v1) 
 
-<span style="color:blue"><sup>3</sup></span> *https://github.com/TheJacksonLaboratory/ChIA-view.git*
+<span style="color:blue"><sup>3</sup></span> *https://github.com/TheJacksonLaboratory/ChIA-DropBox.git*
+
+<span style="color:blue"><sup>4</sup></span> *https://github.com/TheJacksonLaboratory/ChIA-view.git*
 
 
 <font size="3" color="blue" face="verdana"> This pipeline was developed and executed in Centos 6.5 of HPC (high performance computing). </font>
