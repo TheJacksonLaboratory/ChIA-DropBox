@@ -2,7 +2,9 @@
 *---- a novel analysis and visualization pipeline for multiplex chromatin interactions*
 
 -- Interface from ChIA-Drop data to Juicer box 2D heatmap was coding by Byoungkoo Lee
+
 -- Interface from ChIA-Drop data to ChIA-PIPE loop cluster was coding by Daniel Capurso
+
 -- All others  was coding by Simon Zhongyuan Tian
 
 
