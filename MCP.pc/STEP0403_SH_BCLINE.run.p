@@ -18,8 +18,12 @@ SC2="${FUNDIR}/PX_0403_BCLINE.py"
 
 for F in ../R01_PET2R1/*.R1.bed
 do
-	sh ${FUNDIR}/PX_0403_SH_BCLINE.sh $SC1 $GENOME_SIZE $SC2 $F &
-	jobmax $PC_CPU_NUM
+        V=$(ls $F|rev|cut -d"/" -f1|rev|cut -d"-" -f2|cut -d"." -f1)
+        if [ $V -ne 0 ]
+        then
+	        sh ${FUNDIR}/PX_0403_SH_BCLINE.sh $SC1 $GENOME_SIZE $SC2 $F &
+	        jobmax $PC_CPU_NUM
+        fi
 done
 wait
 cd $FRR
