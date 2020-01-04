@@ -5,7 +5,7 @@
 
 -- Interface from ChIA-Drop data to ChIA-PIPE loop cluster was coding by Daniel Capurso
 
--- All others  was coding by Simon Zhongyuan Tian
+-- All others was coding by Simon Zhongyuan Tian
 
 
 Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>, a novel experimental method for detecting multiplex chromatin interactions with single-molecule precision via droplet-based and barcode-linked sequencing. **ChIA-DropBox**<span style="color:blue"><sup>2</sup></span>  a novel toolkit for analyzing and visualizing multiplex chromatin interactions, which includes:  a **ChIA-DropBox data processing pipeline**<span style="color:blue"><sup>3</sup></span> and a visualizing tool **ChIA-View**<span style="color:blue"><sup>4</sup></span>. Here we also supply tools for importing **SPRITE**<span style="color:blue"><sup>5</sup></span> and **GAM**<span style="color:blue"><sup>6</sup></span> data into ChIA-DropBox pipeline to see library quality and view data using ChIA-View (in MCP.transformate_SPRITE_to_ChIA-DropBox and MCP.transformate_GAM_to_ChIA-DropBox directories). We also give a interface to transmit ChIA-Drop pairewise contact file to call loop clustering in **ChIA-PIPE**<span style="color:blue"><sup>7</sup></span> pipeline.
