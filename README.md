@@ -1,11 +1,7 @@
 ## ChIA-DropBox
 *---- a novel analysis and visualization pipeline for multiplex chromatin interactions*
 
--- Interface from ChIA-Drop data to Juicer box 2D heatmap was coding by Byoungkoo Lee
-
--- Interface from ChIA-Drop data to ChIA-PIPE loop cluster was coding by Daniel Capurso
-
--- All others was coding by Simon Zhongyuan Tian
+* Coding by Simon Zhongyuan Tian (including Interface from ChIA-Drop data to Juicer box 2D heatmap was coding by Byoungkoo Lee; Interface from ChIA-Drop data to ChIA-PIPE loop cluster was coding by Daniel Capurso) *
 
 
 Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>, a novel experimental method for detecting multiplex chromatin interactions with single-molecule precision via droplet-based and barcode-linked sequencing. **ChIA-DropBox**<span style="color:blue"><sup>2</sup></span>  a novel toolkit for analyzing and visualizing multiplex chromatin interactions, which includes:  a **ChIA-DropBox data processing pipeline**<span style="color:blue"><sup>3</sup></span> and a visualizing tool **ChIA-View**<span style="color:blue"><sup>4</sup></span>. Here we also supply tools for importing **SPRITE**<span style="color:blue"><sup>5</sup></span> and **GAM**<span style="color:blue"><sup>6</sup></span> data into ChIA-DropBox pipeline to see library quality and view data using ChIA-View (in MCP.transformate_SPRITE_to_ChIA-DropBox and MCP.transformate_GAM_to_ChIA-DropBox directories). We also give a interface to transmit ChIA-Drop pairewise contact file to call loop clustering in **ChIA-PIPE**<span style="color:blue"><sup>7</sup></span> pipeline.
@@ -34,7 +30,7 @@ Recently, we developed **ChIA-Drop**<span style="color:blue"><sup>1</sup></span>
 ## 1 Prepare materials for longranger
 
 ### 1.1 Install longranger pipeline
-Download 10X Genomeics <b><i>[longranger pipeline](https://support.10xgenomics.com/genome-exome/software/downloads/latest)</i></b>, and then install it according to its [Instruction](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/installation). We have tested **longranger v1.x**, which could be download from: https://support.10xgenomics.com/genome-exome/software/downloads/1.x/
+Download 10X Genomeics <b><i>[longranger pipeline](https://support.10xgenomics.com/genome-exome/software/downloads/latest)</i></b>, and then install it according to its [Instruction](https://support.10xgenomics.com/genome-exome/software/pipelines/latest/installation). We have tested **longranger v2.1.x**, which could be requist from 10X Genomeics.
 
 
 ### 1.2 Prepare reference genome 
@@ -94,7 +90,7 @@ MCP.FASTQ/SHG0055H_GT18-19704_SI-GA-H11_S22_L001_R2_001.fastq.gz
 
 Following tools and packages are necessary for ChIA-DropBox data processing pipeline.
 ```{bash}
-module load longranger/2.1.5 (or later version);
+module load longranger/2.1.5 (or 2.1.6);
 module load python/2.7.13 (packages: os, sys, subprocess, operator, collections,time, pysam, pybedtools, glob)
 module load samtools/1.8;
 module load java/1.8.0
