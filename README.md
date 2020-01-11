@@ -63,6 +63,8 @@ are aviable @ *https://www.dropbox.com/sh/klb1hwprl66qced/AAAGEE9e5SumVEK31jCN4N
 
 Please rename the SRRxxx FASTQs to following psydo-name, which format is required by longranger pipeline: 
 
+Or using script: MCP_RUN00_prepare_data.sh
+
 RNAP2 ChIA-Drop: SHG0051H @ [SRR7722067](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR7722067)
 ```
 MCP.FASTQ/
