@@ -61,10 +61,9 @@ are aviable @ *https://www.dropbox.com/sh/klb1hwprl66qced/AAAGEE9e5SumVEK31jCN4N
 
 #### 1.3.2 GSE109355 Production data (Nextseq/Hiseq) 
 
-Please rename the SRRxxx FASTQs to following psydo-name, which format is required by longranger pipeline: 
+Please rename the SRRxxx FASTQs to 10X longranger needed name by using: MCP.PRE01.prepare_data_SRR.sh
 
-Or using script: MCP_RUN00_prepare_data.sh
-
+e.g.
 RNAP2 ChIA-Drop: SHG0051H @ [SRR7722067](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR7722067)
 ```
 MCP.FASTQ/
@@ -146,7 +145,7 @@ cp -rf ../ChIA-dropbox-v1.0/MCP* .
 
 ```shell
 
-## FASTQ
+## FASTQ (USING: MCP.PRE02.prepare_MCP.FASTQ.sh)
 cd SHG0055H/MCP.FASTQ/
 
 #!! please copy fastq file here : 
@@ -157,7 +156,7 @@ cp /path-to-fastq/SHG0055H_GT18-08809_SI-GA-B5_S20_L004_R1_001.fastq SHG0055H_GT
 ln -s /path-to-fastq/SHG0055H_GT18-08809_SI-GA-B5_S20_L004_R1_001.fastq SHG0055H_GT18-08809_SI-GA-B5_S20_L004_R1_001.fastq
 ln -s /path-to-fastq/SHG0055H_GT18-08809_SI-GA-B5_S20_L004_R1_001.fastq SHG0055H_GT18-08809_SI-GA-B5_S20_L004_R1_001.fastq
 
-## Reference genome
+## Reference genome (USING: MCP.PRE03.prepare_MCP.REF.sh)
 cd SHG0055H/
 ln -s /projects/ruan-lab/Sequence_pool/10X/REFGNM10X/ MCP.REF
 ## detail see: 1.2 Prepare reference genome 
