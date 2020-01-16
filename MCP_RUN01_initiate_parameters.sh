@@ -54,7 +54,7 @@ echo $MEM
 echo "###################"
 
 
-DF_WALLTIME=25
+DF_WALLTIME=36
 read -e -i "$DF_WALLTIME" -p "pipeline running time requierd: " RD_WALLTIME
 WALLTIME="${WALLTIME:-$RD_WALLTIME}"
 echo "~~~~~~~~~~"
